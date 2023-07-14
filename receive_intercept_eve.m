@@ -11,16 +11,6 @@ function bob_result = receive_intercept_eve(bob_bases, eve_result)
             else
                 qubit = hadamard(qubit);
             end
-        %{
-        else
-            if qubit == 0
-                qubit = pauli_z([1; 0]);
-            elseif qubit == 1
-                qubit = pauli_z([0; 1]);
-            else
-                qubit = pauli_z(qubit);
-            end
-        %}
         end
         bob_result = [bob_result measure(qubit)];
     end

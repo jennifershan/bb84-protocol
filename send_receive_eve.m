@@ -1,4 +1,4 @@
-function bob_result = receive_intercept_eve(bob_bases, eve_result)
+function bob_result = send_receive_eve(bob_bases, eve_result)
     % use when bob receives qubits after they have been intercepted by eve
     bob_result = [];
     for i = 1:length(eve_result)

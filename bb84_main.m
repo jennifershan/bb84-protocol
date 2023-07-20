@@ -13,7 +13,7 @@ bob_bases = create_key_starter(key_length);
 if ~eve_listening
     % rotate alice's qubits when she sends
     % rotate bob's qubits when he receives
-    bob_result = send_to_receive(alice_bases, bob_bases, key_starter);
+    bob_result = send_receive(alice_bases, bob_bases, key_starter);
     
     % alice and bob publicly compare to create key
     alice_key = comp_bases(alice_bases, bob_bases, key_starter);
@@ -32,10 +32,10 @@ elseif eve_listening
 
     % rotate alice's qubits when she sends
     % rotate eve's qubits when she receives
-    eve_result = send_to_receive(alice_bases, eve_bases, key_starter);
+    eve_result = send_receive(alice_bases, eve_bases, key_starter);
     
     % eve passes on qubits to bob
-    bob_result = receive_intercept_eve(bob_bases, eve_result);
+    bob_result = send_receive_eve(bob_bases, eve_result);
     
     % alice and bob publicly compare to create key
     alice_key = comp_bases(alice_bases, bob_bases, key_starter);

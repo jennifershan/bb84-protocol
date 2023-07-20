@@ -11,8 +11,8 @@ for i = 1:max_key_length
         bob_bases = create_key_starter(i);
         eve_bases = create_key_starter(i);
         
-        eve_result = send_to_receive(alice_bases, eve_bases, key_starter);
-        bob_result = receive_intercept_eve(bob_bases, eve_result);
+        eve_result = send_receive(alice_bases, eve_bases, key_starter);
+        bob_result = send_receive_eve(bob_bases, eve_result);
         
         alice_key = comp_bases(alice_bases, bob_bases, key_starter);
         bob_key = comp_bases(alice_bases, bob_bases, bob_result);

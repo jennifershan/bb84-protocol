@@ -1,4 +1,4 @@
-function receiver_result = send_to_receive(sender_bases, receiver_bases, key_starter)
+function receiver_result = send_receive(sender_bases, receiver_bases, key_starter)
     % use with generic sender and receiver
     receiver_result = [];
     for i = 1:length(key_starter)
